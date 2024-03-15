@@ -1,5 +1,6 @@
 ### Hi there 👋
 
+![Vue](https://img.shields.io/badge/Vue_33.6%25-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 <!--
 **Pelagoss/Pelagoss** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
