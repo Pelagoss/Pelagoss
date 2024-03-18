@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:Pelagoss/Pelagoss.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mustache": "^4.2.0"
+  }
 }

@@ -1,3 +1,6 @@
+const mustache = require('mustache');
+const fs = require('node:fs');
+
 async function githubFetch(url) {
     return (await fetch(`https://api.github.com${url}`, {
         headers: {
@@ -8,8 +11,8 @@ async function githubFetch(url) {
     })).json()
 }
 
-async function fetchRepositories(username, exclusions = []) {
-    let data = await githubFetch(`/users/${username}/repos`);
+async function fetchRepositories(exclusions = []) {
+    let data = await githubFetch(`/user/repos`);
 
     return data.filter(r => !exclusions.includes(r.name)).map(r => r.full_name);
 }
@@ -21,7 +24,7 @@ async function fetchLanguagesStatsRepository(repoName) {
 }
 
 async function getLanguagesStatsFromProfile(username) {
-    let repos = await fetchRepositories(username, ['symfony', username]);
+    let repos = await fetchRepositories(['symfony']);
 
     let gloabalLanguages = {};
 
@@ -44,15 +47,30 @@ async function getLanguagesStatsFromProfile(username) {
     stats = stats.filter(s => !insignifiants.map(i => i.name).includes(s.name));
 
     stats.push({name: 'Other', value: Math.round(insignifiants.reduce((a,b) => a + b.value, 0))});
+
+    return stats;
 }
 
-let languages = getLanguagesStatsFromProfile('Pelagoss');
-
 let badgeMap = {
+    'Dart': {
+        bgColor: '#0175C2',
+        logo: 'dart',
+        logoColor: 'white',
+    },
+    'Java': {
+        bgColor: '#ED8B00',
+        logo: 'openjdk',
+        logoColor: 'white',
+    },
     'Vue': {
         bgColor: '#35495e',
         logo: 'vuedotjs',
         logoColor: '#4FC08D',
+    },
+    'Twig': {
+        bgColor: '#000000',
+        logo: 'symfony',
+        logoColor: 'white',
     },
     'CSS': {
         bgColor: '#1572B6',
@@ -74,6 +92,11 @@ let badgeMap = {
         logo: 'javascript',
         logoColor: '#F7DF1E',
     },
+    'TypeScript': {
+        bgColor: '#007ACC',
+        logo: 'javascript',
+        logoColor: 'white',
+    },
     'HTML': {
         bgColor: '#E34F26',
         logo: 'html5',
@@ -84,11 +107,37 @@ let badgeMap = {
         logo: 'sass',
         logoColor: 'white',
     },
+    'C++': {
+        bgColor: '#00599C',
+        logo: 'cplusplus',
+        logoColor: 'white',
+    },
     'Other': {
         bgColor: '#2A2F3D',
         logo: null,
         logoColor: null,
     }
 }
+
+let languages = getLanguagesStatsFromProfile('Pelagoss').then(
+    (stats) => {
+        let badges = [];
+        
+        stats.forEach((s, i) => {
+            let k = s.name;
+
+            try {
+                badges.push(`![${k}](https://img.shields.io/badge/${k}_${s.value}%-${encodeURIComponent(badgeMap[k]['bgColor'])}.svg?style=for-the-badge&logo=${badgeMap[k]['logo']}&logoColor=${encodeURIComponent(badgeMap[k]['logoColor'])})`)
+            } catch ($e) {
+                console.log(k);
+            }
+        });
+
+        const file = fs.readFileSync('README_template.md', 'utf8');
+
+        const rendered = mustache.render(file, {stats: badges});
+
+        fs.writeFileSync('README.md', rendered);
+    });
 
 //![Name](https://img.shields.io/badge/stylus-%23ff6347.svg?style=for-the-badge&logo=stylus&logoColor=white)
