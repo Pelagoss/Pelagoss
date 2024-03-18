@@ -1,10 +1,10 @@
 ### Hi there 👋
 
 ## 💻 My Tech Stats:
-![Dart](https://img.shields.io/badge/Dart_18.1%25-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) &nbsp;
-![Java](https://img.shields.io/badge/Java_12.2%25-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) &nbsp;
-![Vue](https://img.shields.io/badge/Vue_11.2%25-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) &nbsp;
-![Twig](https://img.shields.io/badge/Twig_10.9%25-%23000000.svg?style=for-the-badge&logo=symfony&logoColor=white) &nbsp;
+![Dart](https://img.shields.io/badge/Dart_18.1%25-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)&nbsp;
+![Java](https://img.shields.io/badge/Java_12.2%25-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)&nbsp;
+![Vue](https://img.shields.io/badge/Vue_11.2%25-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)&nbsp;
+![Twig](https://img.shields.io/badge/Twig_10.9%25-%23000000.svg?style=for-the-badge&logo=symfony&logoColor=white)&nbsp;
 ![TypeScript](https://img.shields.io/badge/TypeScript_10.3%25-%23007ACC.svg?style=for-the-badge&logo=javascript&logoColor=white)&nbsp;
 ![PHP](https://img.shields.io/badge/PHP_8.3%25-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)&nbsp;
 ![Python](https://img.shields.io/badge/Python_7.8%25-%233670A0.svg?style=for-the-badge&logo=python&logoColor=%23ffdd54)&nbsp;
