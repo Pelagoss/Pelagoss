@@ -127,7 +127,7 @@ let languages = getLanguagesStatsFromProfile('Pelagoss').then(
             let k = s.name;
 
             try {
-                badges.push(`![${k}](https://img.shields.io/badge/${k}_${s.value}%-${encodeURIComponent(badgeMap[k]['bgColor'])}.svg?style=for-the-badge&logo=${badgeMap[k]['logo']}&logoColor=${encodeURIComponent(badgeMap[k]['logoColor'])})`)
+                badges.push(`![${k}](https://img.shields.io/badge/${k}_${s.value}%25-${encodeURIComponent(badgeMap[k]['bgColor'])}.svg?style=for-the-badge&logo=${badgeMap[k]['logo']}&logoColor=${encodeURIComponent(badgeMap[k]['logoColor'])})`)
             } catch ($e) {
                 console.log(k);
             }
