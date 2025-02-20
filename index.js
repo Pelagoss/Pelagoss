@@ -12,7 +12,7 @@ async function githubFetch(url) {
 }
 
 async function fetchRepositories(exclusions = []) {
-    let data = await githubFetch(`/user/repos?type=owner`);
+    let data = await githubFetch(`/user/repos?per_page=100&affiliation=owner,collaborator`);
 
     return data.filter(r => !exclusions.includes(r.name)).map(r => r.full_name);
 }
