@@ -98,8 +98,8 @@ let badgeMap = {
         logoColor: '#F7DF1E',
     },
     'TypeScript': {
-        bgColor: '#007ACC',
-        logo: 'javascript',
+        bgColor: '#3178C6',
+        logo: 'typescript',
         logoColor: 'white',
     },
     'HTML': {
