@@ -12,7 +12,7 @@ async function githubFetch(url) {
 }
 
 async function fetchRepositories(exclusions = []) {
-    let data = await githubFetch(`/user/repos`);
+    let data = await githubFetch(`/user/repos?type=owner`);
 
     return data.filter(r => !exclusions.includes(r.name)).map(r => r.full_name);
 }
@@ -52,6 +52,11 @@ async function getLanguagesStatsFromProfile(username) {
 }
 
 let badgeMap = {
+    'Go': {
+        bgColor: '#00ADD8',
+        logo: 'go',
+        logoColor: 'white',
+    },
     'Dart': {
         bgColor: '#0175C2',
         logo: 'dart',
