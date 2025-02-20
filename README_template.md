@@ -8,6 +8,7 @@
 ## 🎮 When I'm AFK:
 
 ![PC](https://img.shields.io/badge/PC-%23556DB3?style=for-the-badge&logo=pcgamingwiki&logoColor=white) &nbsp;
+![F1](https://img.shields.io/badge/-%23E10600?style=for-the-badge&logo=f1&logoColor=white) &nbsp;
 
 <!--
 **Pelagoss/Pelagoss** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
